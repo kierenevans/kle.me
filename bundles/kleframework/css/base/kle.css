@@ -69,36 +69,16 @@ em {
         left: 0;
         top: 5em;
     }
-    
+
     .left-gutter.pure-u-md-1-5 ~ * {
         padding-left: 20%;
     }
-    
+
     .content.content-top-offset {
         margin-top: 5em;
     }
-}
 
-/*
-.button-branded-facebook {
-    
+    .l-fixed {
+        position: fixed;
+    }
 }
-.button-branded-twitter {
-    
-}
-.button-branded-github {
-    
-}
-.button-branded-steam {
-    
-}
-.button-branded-stackoverflow {
-    
-}
-.button-branded-lastfm {
-    
-}
-.button-branded-letterboxd {
-    
-}
-*/
