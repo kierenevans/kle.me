@@ -12,15 +12,14 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/3.0.0/grids-responsive.min.css" integrity="sha512-5hr5fSxiYwkxK0EZX2B/DILA1QoyXwIf9ynWVbyMvqcMIDZ0XZKWw+xk9mysLSOLV4iMrBB1t/YAxt/006W4HA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oxygen:400,700" />
 
-        {{ $css := resources.Get "css/kle.css"  }}
-        {{ $style := $css | resources.PostCSS | minify }}
-        {{ $secureCSS := $style | resources.Fingerprint "sha512" }}
+        {{ $mainCss := resources.Get "css/kle.css" }}
+        {{ $secureCSS := $mainCss | resources.PostCSS | minify | resources.Fingerprint "sha512" }}
         <link type="text/css" rel="stylesheet" href="{{ $secureCSS.RelPermalink }}" integrity="{{ $secureCSS.Data.Integrity }}" />
     </head>
     <body>
         <a id="top"></a>
         <header class="header-main l-fixed">
-            <h1>Kieren Luke Evans</h1>
+            <h1>Kieren Evans</h1>
         </header>
         {{ block "main" . }}{{ end }}
 
