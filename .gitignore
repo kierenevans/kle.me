@@ -1,0 +1,3 @@
+src/.hugo_build.lock
+build/
+!build/.gitkeep
