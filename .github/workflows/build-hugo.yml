@@ -31,6 +31,9 @@ jobs:
         env: production
         command: --destination /build --minify --verbose
 
+    - name: check
+      run: '[ "$(find build/ -type f | wc -l)" -gt 1 ]'
+
     - name: publish
       uses: actions/upload-pages-artifact@v1.0.7
       with:
