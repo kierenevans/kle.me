@@ -52,7 +52,7 @@ jobs:
         path: build/
 
   deploy:
-    need: build
+    needs: build
 
     if: github.ref == 'refs/heads/main'
 
