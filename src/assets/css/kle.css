@@ -1,12 +1,10 @@
-html, button, input, select, textarea,
-.pure-g [class *= "pure-u"] {
+html, button, input, select, textarea, .pure-g [class *= "pure-u"] {
     font-family: "Oxygen", "Devjavu Sans", "Arial", sans;
 }
 
 body {
     background-color: #fff;
 }
-
 a:focus {
     outline: 0;
 }

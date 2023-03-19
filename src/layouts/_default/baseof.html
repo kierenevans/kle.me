@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Kieren Luke Evans</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+        <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/3.0.0/pure-min.css" integrity="sha512-X2yGIVwg8zeG8N4xfsidr9MqIfIE8Yz1It+w2rhUJMqxUwvbVqC5OPcyRlPKYOw/bsdJut91//NO9rSbQZIPRQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/3.0.0/grids-responsive.min.css" integrity="sha512-5hr5fSxiYwkxK0EZX2B/DILA1QoyXwIf9ynWVbyMvqcMIDZ0XZKWw+xk9mysLSOLV4iMrBB1t/YAxt/006W4HA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oxygen:400,700" />
+
+        {{ $css := resources.Get "css/kle.css"  }}
+        {{ $style := $css | resources.PostCSS | minify }}
+        {{ $secureCSS := $style | resources.Fingerprint "sha512" }}
+        <link type="text/css" rel="stylesheet" href="{{ $secureCSS.RelPermalink }}" integrity="{{ $secureCSS.Data.Integrity }}" />
+    </head>
+    <body>
+        <a id="top"></a>
+        <header class="header-main l-fixed">
+            <h1>Kieren Luke Evans</h1>
+        </header>
+        {{ block "main" . }}{{ end }}
+
+        {{ block "footer" . }}{{ end }}
+
+        {{ $js := resources.Get "js/smooth-scroll.js"  }}
+        {{ $secureJS := $js | resources.Fingerprint "sha512" }}
+        <script src="{{ $secureJS.RelPermalink }}" integrity="{{ $secureJS.Data.Integrity }}"></script>
+    </body>
+</html>
