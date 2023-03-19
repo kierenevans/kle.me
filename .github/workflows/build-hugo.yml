@@ -29,6 +29,7 @@ jobs:
         source: src/
         target: build/
         env: production
+        command: hugo --destination /build --minify
 
     - name: publish
       uses: actions/upload-pages-artifact@v1.0.7
