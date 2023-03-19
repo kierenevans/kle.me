@@ -21,7 +21,7 @@ a, a:link {
     }
 
 main {
-    text-wrap: break-word;
+    word-wrap: break-word;
 }
 
 p {
