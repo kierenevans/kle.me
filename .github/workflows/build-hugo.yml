@@ -1,7 +1,9 @@
 name: Build and Upload Hugo Site
 
 on:
-  push: {}
+  push:
+    branches:
+      - main
   pull_request: {}
 
 jobs:
