@@ -1,0 +1,28 @@
+services:
+  hugo:
+    image: klakegg/hugo:0.101.0-ext-alpine
+    command: server
+    environment:
+      HUGO_DESTINATION: /build
+    ports:
+      - 8080:1313
+    volumes:
+      - "./build/:/build"
+      - "./src/:/src"
+
+  cli:
+    image: klakegg/hugo:0.101.0-ext-alpine
+    entrypoint: /bin/sh -c 'while true; do sleep 86400; done'
+    environment:
+      HUGO_DESTINATION: /build
+    volumes:
+      - "./build/:/build"
+      - "./src/:/src"
+
+  hugo-production:
+    build:
+      context: src/
+      args:
+        FROM_TAG: 0.101.0-ext-alpine-onbuild
+    ports:
+      - 8081:80

@@ -1,0 +1,40 @@
+name: Build and Upload Hugo Site
+
+on:
+  push:
+    branches:
+      - main
+  pull_request: {}
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        version: [0.101.0]
+        image: [ext-alpine]
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: checkout
+      uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+
+    - name: build
+      uses: klakegg/actions-hugo@1.0.0
+      with:
+        version: ${{ matrix.version }}
+        image: ${{ matrix.image }}
+        source: src/
+        target: build/
+        env: production
+        command: --destination /target --minify --verbose
+
+    - name: check
+      run: '[ "$(find build/ -type f | wc -l)" -gt 1 ]'
+
+    - name: publish
+      uses: actions/upload-pages-artifact@v1.0.7
+      with:
+        path: build/

@@ -1,0 +1,4 @@
+src/.hugo_build.lock
+build/
+!build/.gitkeep
+src/resources/_gen/
