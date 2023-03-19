@@ -17,16 +17,12 @@
         <link type="text/css" rel="stylesheet" href="{{ $secureCSS.RelPermalink }}" integrity="{{ $secureCSS.Data.Integrity }}" />
     </head>
     <body>
-        <a id="top"></a>
+        <a id="top" title="Scroll to the top"></a>
         <header class="header-main l-fixed">
             <h1>Kieren Evans</h1>
         </header>
         {{ block "main" . }}{{ end }}
 
         {{ block "footer" . }}{{ end }}
-
-        {{ $js := resources.Get "js/smooth-scroll.js"  }}
-        {{ $secureJS := $js | resources.Fingerprint "sha512" }}
-        <script src="{{ $secureJS.RelPermalink }}" integrity="{{ $secureJS.Data.Integrity }}"></script>
     </body>
 </html>

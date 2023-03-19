@@ -2,6 +2,10 @@ html, button, input, select, textarea, .pure-g [class *= "pure-u"] {
     font-family: "Oxygen", "Devjavu Sans", "Arial", sans;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background-color: #fff;
     color: #222;
@@ -29,6 +33,10 @@ p {
 
 em {
     color: #f00;
+}
+
+.hidden {
+    display: none;
 }
 
 .header-main {
@@ -103,5 +111,11 @@ em {
     .side-nav li > a {
         color: #ddd;
 
+    }
+}
+
+@media (prefers-reduced-motion) {
+    html {
+        scroll-behavior: auto;
     }
 }
