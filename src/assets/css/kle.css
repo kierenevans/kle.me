@@ -4,6 +4,7 @@ html, button, input, select, textarea, .pure-g [class *= "pure-u"] {
 
 body {
     background-color: #fff;
+    color: #222;
 }
 a:focus {
     outline: 0;
@@ -33,7 +34,7 @@ em {
 .header-main {
     text-align: center;
     border-bottom: 1px solid #ff8000;
-    background-color: #fff;
+    background-color: #eee;
     width: 100%;
 }
 
@@ -78,5 +79,29 @@ em {
 
     .l-fixed {
         position: fixed;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #222;
+        color: #ddd;
+    }
+
+    a, a:link {
+        color: #a05220;
+    }
+
+    .header-main {
+        background-color: #444;
+    }
+
+    .side-nav {
+        border-color: #000;
+    }
+
+    .side-nav li > a {
+        color: #ddd;
+
     }
 }
