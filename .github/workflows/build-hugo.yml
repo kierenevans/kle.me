@@ -29,7 +29,7 @@ jobs:
         source: src/
         target: build/
         env: production
-        command: --destination /build --minify
+        command: --destination /build --minify --verbose
 
     - name: publish
       uses: actions/upload-pages-artifact@v1.0.7

@@ -13,7 +13,7 @@
         <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oxygen:400,700" />
 
         {{ $mainCss := resources.Get "css/kle.css" }}
-        {{ $secureCSS := $mainCss | resources.PostCSS | minify | resources.Fingerprint "sha512" }}
+        {{ $secureCSS := $mainCss | minify | resources.Fingerprint "sha512" }}
         <link type="text/css" rel="stylesheet" href="{{ $secureCSS.RelPermalink }}" integrity="{{ $secureCSS.Data.Integrity }}" />
     </head>
     <body>
