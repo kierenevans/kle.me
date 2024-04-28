@@ -1,6 +1,6 @@
 services:
   hugo:
-    image: klakegg/hugo:0.101.0-ext-alpine
+    image: klakegg/hugo:0.119.0-ext-alpine
     command: server --liveReloadPort 8080
     environment:
       HUGO_DESTINATION: /build
@@ -11,7 +11,7 @@ services:
       - "./src/:/src"
 
   cli:
-    image: klakegg/hugo:0.101.0-ext-alpine
+    image: klakegg/hugo:0.119.0-ext-alpine
     entrypoint: /bin/sh -c 'while true; do sleep 86400; done'
     environment:
       HUGO_DESTINATION: /build
@@ -23,6 +23,6 @@ services:
     build:
       context: src/
       args:
-        FROM_TAG: 0.101.0-ext-alpine-onbuild
+        FROM_TAG: 0.119.0-ext-alpine-onbuild
     ports:
       - 8081:80
