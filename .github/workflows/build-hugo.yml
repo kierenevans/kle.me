@@ -47,7 +47,7 @@ jobs:
       run: '[ "$(find build/ -type f | wc -l)" -gt 1 ]'
 
     - name: publish
-      uses: actions/upload-pages-artifact@v1.0.7
+      uses: actions/upload-pages-artifact@v3
       with:
         path: build/
 
@@ -65,4 +65,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v1
+        uses: actions/deploy-pages@v4
